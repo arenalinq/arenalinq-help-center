@@ -575,3 +575,8 @@ nav.navbar--fixed-top .navbar__link {
 nav.navbar--fixed-top .navbar__link:hover {
   color: var(--alq-text-dark);
 }
+
+/* ===== Hide heading anchor links ===== */
+.hash-link {
+  display: none;
+}
