@@ -588,6 +588,6 @@ nav.navbar--fixed-top .navbar__link:hover {
 }
 
 /* ===== Navbar right items spacing ===== */
-.navbar__items--right > :last-child {
-  margin-left: 12px;
+.navbar__items--right {
+  gap: 16px;
 }
