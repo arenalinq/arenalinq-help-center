@@ -5,7 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "Arenalinq Help Center",
   tagline: "Recruiting management for college athletics",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
 
   future: {
     v4: true,
