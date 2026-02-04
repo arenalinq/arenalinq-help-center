@@ -68,7 +68,7 @@ const config = {
           },
           {
             href: "https://arenalinq.com",
-            label: "ArenaLinq.com",
+            label: "Arenalinq.com",
             position: "right",
           },
           {
