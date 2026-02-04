@@ -580,3 +580,9 @@ nav.navbar--fixed-top .navbar__link:hover {
 .hash-link {
   display: none;
 }
+
+/* ===== Hide external link icons in navbar ===== */
+.navbar a[target="_blank"] svg,
+.navbar a[target="_blank"]::after {
+  display: none !important;
+}
