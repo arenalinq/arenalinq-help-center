@@ -58,6 +58,8 @@ const config = {
           alt: "Arenalinq",
           src: "img/logo.svg",
           href: "/",
+          width: 32,
+          height: 32,
         },
         items: [
           {
