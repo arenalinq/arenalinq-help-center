@@ -586,3 +586,8 @@ nav.navbar--fixed-top .navbar__link:hover {
 .navbar a[target="_blank"]::after {
   display: none !important;
 }
+
+/* ===== Navbar right items spacing ===== */
+.navbar__items--right > :last-child {
+  margin-left: 12px;
+}
