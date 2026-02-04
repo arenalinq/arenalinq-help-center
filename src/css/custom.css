@@ -1,0 +1,577 @@
+/**
+ * Arenalinq Help Center — Custom Theme
+ * Mirrors the Arenalinq application design system
+ *
+ * Primary Green: #2C786C
+ * Font: Inter
+ * Radii: 4px
+ * Light mode only
+ */
+
+/* ===== Import Inter font ===== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* ===== Core Color Tokens ===== */
+:root {
+  /* Primary — Arenalinq teal-green */
+  --ifm-color-primary: #2c786c;
+  --ifm-color-primary-dark: #245f56;
+  --ifm-color-primary-darker: #1e5249;
+  --ifm-color-primary-darkest: #165e59;
+  --ifm-color-primary-light: #379587;
+  --ifm-color-primary-lighter: #4a9e91;
+  --ifm-color-primary-lightest: #6bb3a8;
+
+  /* Typography */
+  --ifm-font-family-base: "Inter", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ifm-heading-font-family: -apple-system, BlinkMacSystemFont,
+    "SF Pro Display", system-ui, sans-serif;
+  --ifm-font-size-base: 15px;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-semibold: 600;
+
+  /* Text colors from Arenalinq palette */
+  --ifm-font-color-base: rgba(31, 41, 41, 0.84); /* header text */
+  --ifm-heading-color: rgba(31, 41, 41, 0.96); /* display text */
+  --alq-text-body: rgba(31, 41, 41, 0.72);
+  --alq-text-secondary: #6a7877;
+  --alq-text-subtext: rgba(31, 41, 41, 0.56);
+  --alq-text-placeholder: rgba(31, 41, 41, 0.32);
+  --alq-text-dark: #1f2929;
+
+  /* Backgrounds */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  --alq-bg-muted: #eef0ef;
+  --alq-bg-sidebar-active: #e9f7f5;
+
+  /* Borders */
+  --ifm-global-border-color: rgba(0, 0, 0, 0.08);
+  --alq-border-medium: rgba(0, 0, 0, 0.12);
+  --alq-border-input: #e5e5e5;
+
+  /* Radius — 4px everywhere like the app */
+  --ifm-global-radius: 4px;
+  --ifm-code-border-radius: 4px;
+  --ifm-alert-border-radius: 4px;
+  --ifm-button-border-radius: 4px;
+  --ifm-card-border-radius: 4px;
+  --ifm-pagination-border-radius: 4px;
+
+  /* Shadows */
+  --ifm-global-shadow-lw: 0 4px 44px rgba(0, 0, 0, 0.08);
+  --ifm-global-shadow-md: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  /* Accents */
+  --alq-orange: #dc7433;
+  --alq-link-blue: #007bed;
+  --alq-error: #eb5757;
+  --alq-success: #00b060;
+
+  /* Spacing */
+  --alq-space-4: 4px;
+  --alq-space-8: 8px;
+  --alq-space-12: 12px;
+  --alq-space-16: 16px;
+  --alq-space-20: 20px;
+  --alq-space-24: 24px;
+  --alq-space-32: 32px;
+
+  /* Misc */
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: rgba(44, 120, 108, 0.1);
+
+  /* Disable dark mode toggle */
+  --ifm-color-scheme: light;
+}
+
+/* ===== Force Light Mode ===== */
+/* Arenalinq has no dark mode, so we override dark theme to match light */
+[data-theme="dark"] {
+  --ifm-color-primary: #379587;
+  --ifm-color-primary-dark: #2c786c;
+  --ifm-color-primary-darker: #245f56;
+  --ifm-color-primary-darkest: #165e59;
+  --ifm-color-primary-light: #4a9e91;
+  --ifm-color-primary-lighter: #6bb3a8;
+  --ifm-color-primary-lightest: #8cc5bc;
+
+  --ifm-background-color: #1a2424;
+  --ifm-background-surface-color: #1f2929;
+  --ifm-font-color-base: rgba(235, 240, 240, 0.84);
+  --ifm-heading-color: rgba(235, 240, 240, 0.96);
+  --alq-text-body: rgba(235, 240, 240, 0.72);
+  --alq-text-secondary: #8fa3a1;
+  --alq-bg-muted: #253030;
+  --alq-bg-sidebar-active: rgba(44, 120, 108, 0.15);
+  --ifm-global-border-color: rgba(255, 255, 255, 0.08);
+  --alq-border-medium: rgba(255, 255, 255, 0.12);
+  --docusaurus-highlighted-code-line-bg: rgba(44, 120, 108, 0.2);
+}
+
+/* ===== Global Layout ===== */
+html {
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--ifm-font-family-base);
+  color: var(--alq-text-body);
+}
+
+/* ===== Headings ===== */
+h1 {
+  font-size: 32px;
+  line-height: 36px;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  letter-spacing: -0.3px;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-top: 2rem;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  margin-top: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+}
+
+/* ===== Body Text ===== */
+p,
+li {
+  color: var(--alq-text-body);
+  line-height: 1.65;
+  letter-spacing: -0.2px;
+}
+
+/* ===== Links ===== */
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+  height: 60px;
+  padding: 0 var(--alq-space-24);
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #1f2929;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.navbar__title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--alq-text-dark);
+  letter-spacing: -0.2px;
+}
+
+[data-theme="dark"] .navbar__title {
+  color: rgba(235, 240, 240, 0.96);
+}
+
+.navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--alq-text-body);
+  border-radius: 4px;
+  padding: 6px 12px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar__link:hover {
+  background-color: var(--alq-bg-muted);
+  color: var(--alq-text-dark);
+  text-decoration: none;
+}
+
+.navbar__link--active {
+  color: var(--ifm-color-primary);
+}
+
+/* ===== Sidebar ===== */
+.theme-doc-sidebar-container {
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="dark"] .theme-doc-sidebar-container {
+  border-right-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.menu {
+  padding: var(--alq-space-16) var(--alq-space-12);
+}
+
+/* Sidebar links */
+.menu__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4e5e5d;
+  border-radius: 4px;
+  padding: 8px 12px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  line-height: 1.4;
+}
+
+[data-theme="dark"] .menu__link {
+  color: #8fa3a1;
+}
+
+.menu__link:hover {
+  background-color: var(--alq-bg-muted);
+  color: var(--alq-text-dark);
+}
+
+[data-theme="dark"] .menu__link:hover {
+  background-color: var(--alq-bg-muted);
+  color: rgba(235, 240, 240, 0.96);
+}
+
+/* Active sidebar link — matches Arenalinq's sidebar active state */
+.menu__link--active:not(.menu__link--sublist) {
+  background-color: var(--alq-bg-sidebar-active) !important;
+  color: var(--ifm-color-primary) !important;
+  font-weight: 600;
+}
+
+/* Category headings */
+.menu__link--sublist {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--alq-text-secondary);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: transparent;
+}
+
+/* ===== Main Content Area ===== */
+.main-wrapper {
+  background-color: var(--ifm-background-color);
+}
+
+article {
+  max-width: 720px;
+  padding: var(--alq-space-32) 0;
+}
+
+.markdown {
+  --ifm-heading-margin-top: 0;
+  --ifm-heading-margin-bottom: 1rem;
+  --ifm-paragraph-margin-bottom: 1rem;
+}
+
+/* ===== Tables ===== */
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 1.5rem 0;
+}
+
+table th {
+  background-color: var(--alq-bg-muted);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--alq-text-secondary);
+  text-align: left;
+  padding: 10px 16px;
+  border: 1px solid var(--alq-border-input);
+}
+
+[data-theme="dark"] table th {
+  background-color: var(--alq-bg-muted);
+  border-color: var(--alq-border-medium);
+}
+
+table td {
+  padding: 10px 16px;
+  border: 1px solid var(--alq-border-input);
+  color: var(--alq-text-body);
+  vertical-align: top;
+}
+
+[data-theme="dark"] table td {
+  border-color: var(--alq-border-medium);
+}
+
+table tr:hover td {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] table tr:hover td {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ===== Admonitions / Callouts ===== */
+.alert {
+  border-radius: 4px;
+  border-width: 1px;
+  border-left-width: 4px;
+  padding: var(--alq-space-16) var(--alq-space-20);
+  font-size: 14px;
+}
+
+/* Tip — uses primary green */
+.alert--success {
+  --ifm-alert-background-color: #e9f7f5;
+  --ifm-alert-border-color: var(--ifm-color-primary);
+  --ifm-alert-foreground-color: var(--alq-text-body);
+}
+
+/* Info — subtle teal */
+.alert--info {
+  --ifm-alert-background-color: #eef5f4;
+  --ifm-alert-border-color: var(--ifm-color-primary-light);
+  --ifm-alert-foreground-color: var(--alq-text-body);
+}
+
+/* Note — neutral gray */
+.alert--secondary {
+  --ifm-alert-background-color: var(--alq-bg-muted);
+  --ifm-alert-border-color: var(--alq-border-input);
+  --ifm-alert-foreground-color: var(--alq-text-body);
+}
+
+/* Warning — orange accent */
+.alert--warning {
+  --ifm-alert-background-color: #fef3ea;
+  --ifm-alert-border-color: var(--alq-orange);
+  --ifm-alert-foreground-color: var(--alq-text-body);
+}
+
+/* Danger/caution */
+.alert--danger {
+  --ifm-alert-background-color: #fdeaea;
+  --ifm-alert-border-color: var(--alq-error);
+  --ifm-alert-foreground-color: var(--alq-text-body);
+}
+
+.admonition-heading {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ===== Code Blocks ===== */
+code {
+  background-color: var(--alq-bg-muted);
+  border: 1px solid var(--alq-border-input);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 13px;
+  color: var(--ifm-color-primary-dark);
+}
+
+[data-theme="dark"] code {
+  background-color: var(--alq-bg-muted);
+  border-color: var(--alq-border-medium);
+  color: var(--ifm-color-primary-light);
+}
+
+/* ===== Buttons (pagination, etc.) ===== */
+.pagination-nav__link {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: var(--alq-space-16) var(--alq-space-20);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 12px rgba(44, 120, 108, 0.08);
+}
+
+.pagination-nav__sublabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--alq-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pagination-nav__label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+}
+
+/* ===== TOC (Table of Contents — right sidebar) ===== */
+.table-of-contents__link {
+  font-size: 13px;
+  color: var(--alq-text-secondary);
+}
+
+.table-of-contents__link--active {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #1f2929;
+  color: rgba(235, 240, 240, 0.72);
+  padding: 48px 24px 32px;
+}
+
+.footer__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(235, 240, 240, 0.96);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.footer__link-item {
+  font-size: 14px;
+  color: rgba(235, 240, 240, 0.56);
+  line-height: 2;
+}
+
+.footer__link-item:hover {
+  color: rgba(235, 240, 240, 0.96);
+  text-decoration: none;
+}
+
+.footer__copyright {
+  font-size: 13px;
+  color: rgba(235, 240, 240, 0.32);
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(235, 240, 240, 0.08);
+}
+
+/* ===== Search (if enabled later) ===== */
+.navbar__search-input {
+  background-color: var(--alq-bg-muted);
+  border: 1px solid var(--alq-border-input);
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 6px 12px;
+}
+
+/* ===== Breadcrumbs ===== */
+.breadcrumbs__link {
+  font-size: 13px;
+  color: var(--alq-text-secondary);
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.breadcrumbs__link:hover {
+  background-color: var(--alq-bg-muted);
+}
+
+/* ===== Scrollbar (subtle) ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Lists in content ===== */
+.markdown ul,
+.markdown ol {
+  padding-left: 1.5rem;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown li strong {
+  color: var(--ifm-heading-color);
+}
+
+/* ===== Horizontal Rules ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--alq-border-input);
+  margin: 2rem 0;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 996px) {
+  article {
+    padding: var(--alq-space-20) var(--alq-space-16);
+  }
+
+  h1 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+/* ===== Sign In navbar button ===== */
+.navbar__link--signin {
+  background-color: var(--ifm-color-primary) !important;
+  color: #ffffff !important;
+  border-radius: 4px !important;
+  padding: 6px 16px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.navbar__link--signin:hover {
+  background-color: var(--ifm-color-primary-dark) !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* Override "primary" navbar style to be white since Arenalinq uses white nav */
+nav.navbar--fixed-top {
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+nav.navbar--fixed-top .navbar__link {
+  color: var(--alq-text-body);
+}
+
+nav.navbar--fixed-top .navbar__link:hover {
+  color: var(--alq-text-dark);
+}
