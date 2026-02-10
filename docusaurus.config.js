@@ -11,8 +11,7 @@ const config = {
     v4: true,
   },
 
-  // TODO: Update to your actual help center domain
-  url: "https://help.arenalinq.com",
+  url: "https://docs.arenalinq.com",
   baseUrl: "/",
 
   organizationName: "arenalinq",
