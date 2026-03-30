@@ -71,6 +71,49 @@ const sidebars = {
       id: "faq",
       label: "8. FAQ & Support",
     },
+    {
+      type: "category",
+      label: "9. Athletes & Parents",
+      collapsed: false,
+      items: [
+        {
+          type: "category",
+          label: "9.1 Getting Started",
+          items: [
+            "athlete-getting-started/creating-your-profile",
+            "athlete-getting-started/profile-editor",
+            "athlete-getting-started/your-public-card",
+          ],
+        },
+        {
+          type: "category",
+          label: "9.2 Privacy & Visibility",
+          items: [
+            "privacy-and-visibility/visibility-settings",
+            "privacy-and-visibility/contact-info-on-card",
+            "privacy-and-visibility/share-links",
+          ],
+        },
+        {
+          type: "category",
+          label: "9.3 Family & Parents",
+          items: [
+            "family-and-parents/parent-account",
+            "family-and-parents/claim-codes",
+            "family-and-parents/billing-for-families",
+          ],
+        },
+        {
+          type: "category",
+          label: "9.4 Billing",
+          items: [
+            "athlete-billing/plans-and-pricing",
+            "athlete-billing/managing-subscription",
+          ],
+        },
+        "athlete-faq",
+      ],
+    },
   ],
 };
 
